@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #00FF00;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo{
+  color: #7FFF00;
+  font-size: 35px;
+  font-weight: 600;
+  text-shadow: 2px 3px 10px rgb(0, 0, 0);
+}
+nav .logo span{
+  animation: animate 2s linear infinite;
+  
+}
+.logo span:nth-last-child(1){
+  animation-delay: 0s;
+}
+
+.logo span:nth-last-child(2){
+  animation-delay: 0.25s;
+}
+
+.logo span:nth-last-child(3){
+  animation-delay: 0.5s;
+}
+.logo span:nth-last-child(4)
+{
+  animation-delay: 0.75s;
+}
+.logo span:nth-last-child(5){
+  animation-delay: 1.0s;
+}
+
+.logo span:nth-last-child(6){
+  animation-delay: 1.25s;
+}
+
+.logo span:nth-last-child(7){
+  animation-delay: 1.75s;
+}
+.logo span:nth-last-child(8)
+{
+  animation-delay: 2.0s;
+}
+
+
+@keyframes animate
+{
+  0%,100%{
+    color: #0000FF;
+    filter: blur(0px);
+    text-shadow: 0 0 10px #7CFC00;
+  }
+  5%,95%
+  {
+    color:#7CFC00;
+    filter: blur(0px);
+    text-shadow: 0 0 10px #000000;
+  }
+}
+
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+
